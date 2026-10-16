@@ -1,0 +1,6 @@
+{
+  "name": "Dies",
+  "description": "Smart birthday reminder and personal memory calendar with retro-futuristic aesthetic and offline sharing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer calendar card with retro cut corner -->
+    <path
+        android:fillColor="#1E293B"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2.5"
+        android:pathData="M34,36 L74,36 L80,42 L80,78 L34,78 Z" />
+
+    <!-- Calendar top bar header -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M34,36 L74,36 L80,42 L80,48 L34,48 Z" />
+
+    <!-- Calendar top binder rings -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M44,32 L48,32 L48,38 L44,38 Z M62,32 L66,32 L66,38 L62,38 Z" />
+
+    <!-- Retro Birthday Candle Flame centered above -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M54,18 C52,22 50,25 50,27 C50,29.2 51.8,31 54,31 C56.2,31 58,29.2 58,27 C58,25 56,22 54,18 Z" />
+    <path
+        android:fillColor="#FF7043"
+        android:pathData="M54,23 C53,25 52,26.5 52,27.5 C52,28.6 52.9,29.5 54,29.5 C55.1,29.5 56,28.6 56,27.5 C56,26.5 55,25 54,23 Z" />
+
+    <!-- Stylized 'D' for DIES on calendar face with retro futuristic glyphs -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M44,54 L52,54 C55.5,54 58,56.5 58,60 C58,63.5 55.5,66 52,66 L44,66 Z M48,58 L48,62 L52,62 C53.2,62 54,61.2 54,60 C54,58.8 53.2,58 52,58 Z" />
+
+    <!-- Glowing celebration star in bottom right of card -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M68,58 L69.5,62 L73.5,63.5 L69.5,65 L68,69 L66.5,65 L62.5,63.5 L66.5,62 Z" />
+
+    <!-- Subtle digital countdown ticker dots -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M44,72 L46,72 L46,74 L44,74 Z M49,72 L51,72 L51,74 L49,74 Z M54,72 L56,72 L56,74 L54,74 Z" />
+</vector>
