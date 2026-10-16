@@ -1,0 +1,124 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Represents the user account profile in Dies",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The unique Firebase Auth UID"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp via FieldValue.serverTimestamp()"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp via FieldValue.serverTimestamp()"
+        }
+      },
+      "required": ["userId", "createdAt"]
+    },
+    "EventItem": {
+      "title": "EventItem",
+      "description": "A birthday, anniversary, or special memory event in the cloud calendar",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner user UID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the person or occasion"
+        },
+        "dateDay": {
+          "type": "integer",
+          "description": "Day of the month (1-31)"
+        },
+        "dateMonth": {
+          "type": "integer",
+          "description": "Month of the year (1-12)"
+        },
+        "birthYear": {
+          "type": "integer",
+          "description": "Optional birth year"
+        },
+        "eventType": {
+          "type": "string",
+          "enum": ["BIRTHDAY", "ANNIVERSARY", "SPECIAL_DAY", "OTHER"],
+          "description": "Type of event"
+        },
+        "relationship": {
+          "type": "string",
+          "enum": ["FRIEND", "FAMILY", "WORK", "LOVE", "OTHER"],
+          "description": "Relationship category"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Personal notes or gift ideas"
+        },
+        "isReminderEnabled": {
+          "type": "boolean",
+          "description": "Whether notifications are enabled"
+        },
+        "reminderDaysBefore": {
+          "type": "integer",
+          "description": "Days in advance to remind"
+        },
+        "reminderHour": {
+          "type": "integer",
+          "description": "Hour of day (0-23)"
+        },
+        "reminderMinute": {
+          "type": "integer",
+          "description": "Minute of hour (0-59)"
+        },
+        "isWishedThisYear": {
+          "type": "boolean",
+          "description": "Whether already greeted this year"
+        },
+        "wishedYear": {
+          "type": "integer",
+          "description": "Year when greeted"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp via FieldValue.serverTimestamp()"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp via FieldValue.serverTimestamp()"
+        }
+      },
+      "required": ["userId", "name", "dateDay", "dateMonth", "eventType", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Private user account profile"
+    },
+    "/users/{userId}/events/{eventId}": {
+      "schema": {
+        "$ref": "#/entities/EventItem"
+      },
+      "description": "User's synchronized events and birthdays"
+    }
+  }
+}

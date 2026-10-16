@@ -13,6 +13,7 @@ class DiesApplication : Application() {
 
     val database by lazy { AppDatabase.getDatabase(this) }
     val repository by lazy { EventRepository(database.eventDao(), database.photoDao(), database.memoryDao()) }
+    val firestoreRepository by lazy { com.example.data.FirestoreRepository(this) }
 
     override fun onCreate() {
         super.onCreate()
